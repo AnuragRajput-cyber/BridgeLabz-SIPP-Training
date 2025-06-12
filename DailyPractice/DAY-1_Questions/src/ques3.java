@@ -1,7 +1,7 @@
 import java.util.*;
 public class ques3 {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
+        Scanner sc =new Scanner(System.in);
         int Height = sc.nextInt();
         float inches = Height/2.84F;
         float foot = Height/30.48F;
