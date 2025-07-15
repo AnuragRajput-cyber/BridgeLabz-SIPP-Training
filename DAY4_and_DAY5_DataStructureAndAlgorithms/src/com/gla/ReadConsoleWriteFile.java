@@ -9,7 +9,7 @@ public class ReadConsoleWriteFile {
             BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))
         ) {
             String line;
-            System.out.println("Enter text (type 'exit' to quit):");
+            System.out.println("Enter text :):");
             while (!(line = reader.readLine()).equalsIgnoreCase("exit")) {
                 writer.write(line);
                 writer.newLine();
