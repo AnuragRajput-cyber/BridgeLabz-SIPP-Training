@@ -1,0 +1,24 @@
+CLASS Node
+    ATTRIBUTES: stopName, next
+
+CLASS LinkedList
+    ATTRIBUTES: head
+    METHOD insertAfter(targetStop, newStop)
+        FIND targetStop
+        INSERT newStop after it
+
+    METHOD deleteStop(stopName)
+        FIND stopName
+        REMOVE it from list
+
+    METHOD searchStop(stopName)
+        IF stopName exists
+            RETURN true
+        ELSE
+            RETURN false
+
+MAIN
+    CREATE route: Depot → Main Street → City Mall → Hospital → Airport
+    INSERT "University" after "City Mall"
+    DELETE "Hospital"
+    SEARCH "Airport" → FOUND
