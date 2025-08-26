@@ -1,0 +1,15 @@
+METHOD wordCounter(text)
+    SPLIT text into words
+    NORMALIZE words (lowercase, remove punctuation)
+    CREATE map wordCount
+
+    FOR each word
+        INCREMENT count in wordCount
+
+    PRINT wordCount
+    FIND most frequent word
+    PRINT it
+
+MAIN
+    text = "Sports bring people together. Sports inspire teamwork. Sports create leaders."
+    CALL wordCounter(text)
