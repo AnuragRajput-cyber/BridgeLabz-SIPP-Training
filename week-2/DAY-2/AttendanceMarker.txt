@@ -1,0 +1,25 @@
+DECLARE attendance[30][30]  // 30 students × 30 days
+
+METHOD markAttendance(studentId, day, status)
+    attendance[studentId][day] = status
+
+METHOD dailySummary(day)
+    count = number of 1s in column[day]
+    PRINT "Students present: " + count
+
+METHOD monthlySummary(studentId)
+    total = sum of row[studentId]
+    PRINT "Total attendance of Student " + studentId + " = " + total
+
+METHOD defaulterList()
+    FOR each student
+        total = sum of row
+        IF total < 22 (75% of 30)
+            PRINT studentId
+
+MAIN
+    MARK student1 present on Day1
+    MARK student3 absent on Day1
+    CALL dailySummary(Day10)
+    CALL monthlySummary(student5)
+    CALL defaulterList()
