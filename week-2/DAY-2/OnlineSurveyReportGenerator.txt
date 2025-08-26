@@ -1,0 +1,20 @@
+CLASS SurveyResponse
+    ATTRIBUTES: restaurantName, rating
+
+METHOD generateReport(responses)
+    CREATE map restaurantToRatings
+
+    FOR each response
+        ADD rating to list of that restaurant in map
+
+    FOR each restaurant in map
+        CALCULATE average = sum(ratings)/count(ratings)
+        STORE in reportMap
+
+    PRINT all restaurants with averages
+    FIND restaurant with max average → Best
+    FIND restaurant with min average → Needs improvement
+
+MAIN
+    INPUT: [PizzaHut 4, PizzaHut 5, KFC 3, KFC 4, Subway 5, Subway 4, Subway 5]
+    CALL generateReport(responses)
