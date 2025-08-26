@@ -1,0 +1,31 @@
+CLASS Vehicle
+    ATTRIBUTES: vehicleNumber, entryTime
+    METHOD calculateFee(exitTime)
+        RETURN 0   // to be overridden
+
+CLASS Car EXTENDS Vehicle
+    METHOD calculateFee(exitTime)
+        hours = exitTime - entryTime
+        fee = 50 + (hours - 1) * 30
+        RETURN fee
+
+CLASS Bike EXTENDS Vehicle
+    METHOD calculateFee(exitTime)
+        hours = exitTime - entryTime
+        fee = 20 + (hours - 1) * 10
+        RETURN fee
+
+CLASS Truck EXTENDS Vehicle
+    METHOD calculateFee(exitTime)
+        hours = exitTime - entryTime
+        fee = 100 + (hours - 1) * 50
+        RETURN fee
+
+MAIN
+    CREATE car "KA05AB1234" entry 10:00
+    CREATE bike "KA05XY7890" entry 11:15
+    CREATE truck "KA09TR5566" entry 09:30
+
+    CALCULATE car fee at 13:30 → PRINT ₹125
+    CALCULATE bike fee at 12:00 → PRINT ₹30
+    CALCULATE truck fee at 14:00 → PRINT ₹325
