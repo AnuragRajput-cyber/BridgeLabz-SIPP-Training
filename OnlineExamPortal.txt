@@ -1,0 +1,34 @@
+CLASS User
+    ATTRIBUTES:
+        username
+        password
+    METHODS:
+        login()
+            PRINT "Base login check..."
+
+CLASS Student EXTENDS User
+    ATTRIBUTES:
+        enrolled (true/false)
+    METHODS:
+        login() OVERRIDES
+            IF credentials valid AND enrolled = true
+                PRINT "Student login successful → show exams"
+            ELSE
+                PRINT "Login failed for student"
+
+CLASS Admin EXTENDS User
+    ATTRIBUTES:
+        hasPrivileges (true/false)
+    METHODS:
+        login() OVERRIDES
+            IF credentials valid AND hasPrivileges = true
+                PRINT "Admin login successful → show management tools"
+            ELSE
+                PRINT "Login failed for admin"
+
+MAIN PROGRAM
+    CREATE Student("john123", "pass123", enrolled = true)
+    CREATE Admin("admin01", "admin@123", hasPrivileges = true)
+
+    CALL student.login()
+    CALL admin.login()
